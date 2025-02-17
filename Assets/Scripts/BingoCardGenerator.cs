@@ -7,7 +7,6 @@ public static class BingoCardGenerator
 {
     static System.Random random = new System.Random();
 
-
     public static int[,] GenerateBingoCard()
     {
         int[,] bingoCard = new int[5, 5];
@@ -20,11 +19,11 @@ public static class BingoCardGenerator
 
         int[][] sourceArray = { b, i, n, g, o };
 
-        for (int h = 0; h < 5; h++)
+        for (int col = 0; col < 5; col++)
         {
-            for (int j = 0; j < 5; j++)
+            for (int row = 0; row < 5; row++)
             {
-                bingoCard[h, j] = sourceArray[h][j];
+                bingoCard[row, col] = sourceArray[col][row];
             }
         }
 
@@ -32,7 +31,7 @@ public static class BingoCardGenerator
     }
 
 
-    static int[] FisherYateShuffle(int min)
+    private static int[] FisherYateShuffle(int min)
     {
         int[] arr = new int[15];
 
@@ -45,7 +44,6 @@ public static class BingoCardGenerator
             min++;
         }
 
-
         // Fisher Yates Shuffle
         for (int i = n - 1; i > 0; i--)
         {
@@ -53,10 +51,7 @@ public static class BingoCardGenerator
             (arr[i], arr[j]) = (arr[j], arr[i]);
         }
 
-        int[] chosenNumbers = arr.Take(5).ToArray();
-
-
-        return arr;
+        return arr.Take(5).ToArray(); // Return only the first five elements of the array
     }
 
 }

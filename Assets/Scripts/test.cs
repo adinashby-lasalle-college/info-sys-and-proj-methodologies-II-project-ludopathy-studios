@@ -10,11 +10,11 @@ public class test : MonoBehaviour
 
 
         string output = "";
-        for (int i = 0; i < 5; i++)
+        for (int row = 0; row < 5; row++)
         {
-            for (int j = 0; j < 5; j++)
+            for (int col = 0; col < 5; col++)
             {
-                output += Card[i, j] + " ";
+                output += Card[row, col] + " ";
             }
 
             output += "\n";
