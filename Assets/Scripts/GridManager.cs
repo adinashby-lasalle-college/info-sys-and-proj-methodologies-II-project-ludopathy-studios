@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 namespace Andres_Scene_Scripts{
     
-public class GameManager : MonoBehaviour
+public class GridManager : MonoBehaviour
 {
     public int Turn;
     public int TurnCount;
@@ -60,18 +60,7 @@ public class GameManager : MonoBehaviour
 
             Pl1.MarkedSpace[Number] = 1;
             SelectedNum1 = Pl1.TxtBox[Number].text;
-            
-            // int TboxLength = Pl2.TxtBox.Length;
-            // for (int i = 0; i < TboxLength; i++)
-            // {
-            //     var Num = Pl2.TxtBox[i].text;
-            //     if (SelectedNum1 == Num)
-            //     {
-            //         Pl2.PlBtns[i].interactable = false;
-
-            //         Pl2.MarkedSpace[i] = 1;
-            //     }
-            // }           
+                    
 
             Pl1.WinCondition();
         }
@@ -100,7 +89,6 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-            // Pl2.WinCondition();
         }
     }
 }
