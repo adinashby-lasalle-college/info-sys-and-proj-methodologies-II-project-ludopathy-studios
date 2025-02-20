@@ -166,7 +166,6 @@ MonoBehaviour:
   randomNumber: 0
   displayNumber: {fileID: 244281464}
   drawInterval: 5
-  availableNumbers: 
 --- !u!1 &244281462
 GameObject:
   m_ObjectHideFlags: 0
