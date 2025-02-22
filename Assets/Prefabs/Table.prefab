@@ -398,25 +398,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GameManager, Assembly-CSharp
-        m_MethodName: GridButtons
+        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GridManager, Assembly-CSharp
+        m_MethodName: OnClickCell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3597921398827954380}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.Generate_Numbers, Assembly-CSharp
-        m_MethodName: SetBtnUninteractable
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -543,25 +531,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GameManager, Assembly-CSharp
-        m_MethodName: GridButtons
+        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GridManager, Assembly-CSharp
+        m_MethodName: OnClickCell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3597921398827954380}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.Generate_Numbers, Assembly-CSharp
-        m_MethodName: SetBtnUninteractable
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -688,25 +664,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GameManager, Assembly-CSharp
-        m_MethodName: GridButtons
+        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GridManager, Assembly-CSharp
+        m_MethodName: OnClickCell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3597921398827954380}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.Generate_Numbers, Assembly-CSharp
-        m_MethodName: SetBtnUninteractable
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 8
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1247,25 +1211,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GameManager, Assembly-CSharp
-        m_MethodName: GridButtons
+        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GridManager, Assembly-CSharp
+        m_MethodName: OnClickCell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3597921398827954380}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.Generate_Numbers, Assembly-CSharp
-        m_MethodName: SetBtnUninteractable
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 12
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1392,25 +1344,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GameManager, Assembly-CSharp
-        m_MethodName: GridButtons
+        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GridManager, Assembly-CSharp
+        m_MethodName: OnClickCell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3597921398827954380}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.Generate_Numbers, Assembly-CSharp
-        m_MethodName: SetBtnUninteractable
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 23
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1813,25 +1753,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GameManager, Assembly-CSharp
-        m_MethodName: GridButtons
+        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GridManager, Assembly-CSharp
+        m_MethodName: OnClickCell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3597921398827954380}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.Generate_Numbers, Assembly-CSharp
-        m_MethodName: SetBtnUninteractable
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2096,25 +2024,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GameManager, Assembly-CSharp
-        m_MethodName: GridButtons
+        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GridManager, Assembly-CSharp
+        m_MethodName: OnClickCell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3597921398827954380}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.Generate_Numbers, Assembly-CSharp
-        m_MethodName: SetBtnUninteractable
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 17
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2332,59 +2248,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TxtBox:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2144201553021760282}
+  - {fileID: 8235312961397589649}
+  - {fileID: 4605715520770550297}
+  - {fileID: 1396867554405217556}
+  - {fileID: 7994379106113952379}
+  - {fileID: 106263587113021384}
+  - {fileID: 5224875220878539405}
+  - {fileID: 296762657010571774}
+  - {fileID: 5993194152781166906}
+  - {fileID: 7280771443023182498}
+  - {fileID: 2767151422770930287}
+  - {fileID: 9145687157471950912}
+  - {fileID: 4656153850445837745}
+  - {fileID: 5151998758896549634}
+  - {fileID: 4223141059112526844}
+  - {fileID: 691237731183352069}
+  - {fileID: 1254081911844172006}
+  - {fileID: 2374506279639473425}
+  - {fileID: 5778599523153349177}
+  - {fileID: 2838835008930868791}
+  - {fileID: 1912134760895299954}
+  - {fileID: 8807055840174046790}
+  - {fileID: 5333087034018745131}
+  - {fileID: 1240280002240208682}
+  - {fileID: 8690264076776887425}
   Numbers: 
-  PlBtns:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  gameManager: {fileID: 0}
+  TableBtns:
+  - {fileID: 419398057178804913}
+  - {fileID: 8237755395899004306}
+  - {fileID: 9207015261960300872}
+  - {fileID: 5114091665231657679}
+  - {fileID: 5875561843406421963}
+  - {fileID: 6115788435415440306}
+  - {fileID: 2014153631270182770}
+  - {fileID: 8535062559889125399}
+  - {fileID: 1879227472046713501}
+  - {fileID: 5299940603480168440}
+  - {fileID: 4787224266022052114}
+  - {fileID: 5307026858175996589}
+  - {fileID: 1373581707753507702}
+  - {fileID: 6159825540969531357}
+  - {fileID: 407615862003154619}
+  - {fileID: 594855042641508252}
+  - {fileID: 970299957684327523}
+  - {fileID: 77063741167018351}
+  - {fileID: 4720796876365992645}
+  - {fileID: 4855557664402437916}
+  - {fileID: 6285152068209000957}
+  - {fileID: 645936635621539198}
+  - {fileID: 3615164498444388145}
+  - {fileID: 7784218023001186352}
+  - {fileID: 6379710696397744156}
+  gridManager: {fileID: 0}
   MarkedSpace: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   BingoTxt: []
 --- !u!114 &3757182758423452592
@@ -2809,25 +2725,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GameManager, Assembly-CSharp
-        m_MethodName: GridButtons
+        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GridManager, Assembly-CSharp
+        m_MethodName: OnClickCell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3597921398827954380}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.Generate_Numbers, Assembly-CSharp
-        m_MethodName: SetBtnUninteractable
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3092,25 +2996,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GameManager, Assembly-CSharp
-        m_MethodName: GridButtons
+        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GridManager, Assembly-CSharp
+        m_MethodName: OnClickCell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3597921398827954380}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.Generate_Numbers, Assembly-CSharp
-        m_MethodName: SetBtnUninteractable
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 15
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3375,25 +3267,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GameManager, Assembly-CSharp
-        m_MethodName: GridButtons
+        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GridManager, Assembly-CSharp
+        m_MethodName: OnClickCell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3597921398827954380}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.Generate_Numbers, Assembly-CSharp
-        m_MethodName: SetBtnUninteractable
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3499,7 +3379,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.735849, g: 0, b: 0, a: 1}
     m_DisabledColor: {r: 0.023223212, g: 0.010976552, b: 0.6981132, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3520,20 +3400,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GameManager, Assembly-CSharp
-        m_MethodName: GridButtons
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3597921398827954380}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.Generate_Numbers, Assembly-CSharp
-        m_MethodName: SetBtnUninteractable
+        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GridManager, Assembly-CSharp
+        m_MethodName: OnClickCell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3941,25 +3809,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GameManager, Assembly-CSharp
-        m_MethodName: GridButtons
+        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GridManager, Assembly-CSharp
+        m_MethodName: OnClickCell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3597921398827954380}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.Generate_Numbers, Assembly-CSharp
-        m_MethodName: SetBtnUninteractable
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 24
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4086,25 +3942,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GameManager, Assembly-CSharp
-        m_MethodName: GridButtons
+        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GridManager, Assembly-CSharp
+        m_MethodName: OnClickCell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3597921398827954380}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.Generate_Numbers, Assembly-CSharp
-        m_MethodName: SetBtnUninteractable
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 19
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4231,25 +4075,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GameManager, Assembly-CSharp
-        m_MethodName: GridButtons
+        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GridManager, Assembly-CSharp
+        m_MethodName: OnClickCell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3597921398827954380}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.Generate_Numbers, Assembly-CSharp
-        m_MethodName: SetBtnUninteractable
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 16
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4376,25 +4208,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GameManager, Assembly-CSharp
-        m_MethodName: GridButtons
+        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GridManager, Assembly-CSharp
+        m_MethodName: OnClickCell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3597921398827954380}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.Generate_Numbers, Assembly-CSharp
-        m_MethodName: SetBtnUninteractable
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 20
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4521,25 +4341,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GameManager, Assembly-CSharp
-        m_MethodName: GridButtons
+        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GridManager, Assembly-CSharp
+        m_MethodName: OnClickCell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3597921398827954380}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.Generate_Numbers, Assembly-CSharp
-        m_MethodName: SetBtnUninteractable
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 18
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4804,25 +4612,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GameManager, Assembly-CSharp
-        m_MethodName: GridButtons
+        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GridManager, Assembly-CSharp
+        m_MethodName: OnClickCell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3597921398827954380}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.Generate_Numbers, Assembly-CSharp
-        m_MethodName: SetBtnUninteractable
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 22
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4949,25 +4745,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GameManager, Assembly-CSharp
-        m_MethodName: GridButtons
+        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GridManager, Assembly-CSharp
+        m_MethodName: OnClickCell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3597921398827954380}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.Generate_Numbers, Assembly-CSharp
-        m_MethodName: SetBtnUninteractable
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5508,25 +5292,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GameManager, Assembly-CSharp
-        m_MethodName: GridButtons
+        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GridManager, Assembly-CSharp
+        m_MethodName: OnClickCell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3597921398827954380}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.Generate_Numbers, Assembly-CSharp
-        m_MethodName: SetBtnUninteractable
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5653,25 +5425,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GameManager, Assembly-CSharp
-        m_MethodName: GridButtons
+        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GridManager, Assembly-CSharp
+        m_MethodName: OnClickCell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3597921398827954380}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.Generate_Numbers, Assembly-CSharp
-        m_MethodName: SetBtnUninteractable
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 14
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5798,25 +5558,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GameManager, Assembly-CSharp
-        m_MethodName: GridButtons
+        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GridManager, Assembly-CSharp
+        m_MethodName: OnClickCell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3597921398827954380}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.Generate_Numbers, Assembly-CSharp
-        m_MethodName: SetBtnUninteractable
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 21
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6081,25 +5829,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GameManager, Assembly-CSharp
-        m_MethodName: GridButtons
+        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GridManager, Assembly-CSharp
+        m_MethodName: OnClickCell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3597921398827954380}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.Generate_Numbers, Assembly-CSharp
-        m_MethodName: SetBtnUninteractable
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 9
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6640,25 +6376,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GameManager, Assembly-CSharp
-        m_MethodName: GridButtons
+        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GridManager, Assembly-CSharp
+        m_MethodName: OnClickCell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3597921398827954380}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.Generate_Numbers, Assembly-CSharp
-        m_MethodName: SetBtnUninteractable
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 11
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7061,25 +6785,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GameManager, Assembly-CSharp
-        m_MethodName: GridButtons
+        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GridManager, Assembly-CSharp
+        m_MethodName: OnClickCell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3597921398827954380}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.Generate_Numbers, Assembly-CSharp
-        m_MethodName: SetBtnUninteractable
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7206,25 +6918,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GameManager, Assembly-CSharp
-        m_MethodName: GridButtons
+        m_TargetAssemblyTypeName: Andres_Scene_Scripts.GridManager, Assembly-CSharp
+        m_MethodName: OnClickCell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3597921398827954380}
-        m_TargetAssemblyTypeName: Andres_Scene_Scripts.Generate_Numbers, Assembly-CSharp
-        m_MethodName: SetBtnUninteractable
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 13
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

@@ -14,7 +14,7 @@ namespace Andres_Scene_Scripts
     {
 
         public static GridManager instance;
-        Generate_Numbers Table;
+        BingoCard bingoCardUI;
         public GameObject[] BallDrawnGO;
         public GameObject[] CanvasBlock;
 
@@ -30,7 +30,7 @@ namespace Andres_Scene_Scripts
         void Start()
         {
             GameSetup();
-            Table = Generate_Numbers.instance;
+            bingoCardUI = BingoCard.instance;
             BallDrawnGO = GameObject.FindGameObjectsWithTag("Holder");
         }
 
@@ -39,9 +39,10 @@ namespace Andres_Scene_Scripts
             Debug.Log("Game Start");
         }
 
-        public void GridButtons(int Number)
+        public void OnClickCell(int Number)
         {
-            Table.MarkedSpace[Number] = 1;
+            bingoCardUI.MarkedSpace[Number] = 1;
+            bingoCardUI.TableBtns[Number].interactable = false;
         }
     }
 }

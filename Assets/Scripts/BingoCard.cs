@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Andres_Scene_Scripts
 {
-    public class Generate_Numbers : MonoBehaviour
+    public class BingoCard : MonoBehaviour
     {
         public TMP_Text[] TxtBox;
         public List<int> Numbers = new List<int>();
@@ -16,14 +16,15 @@ namespace Andres_Scene_Scripts
         public int[] MarkedSpace;
         public GameObject[] BingoTxt;
 
-        public static Generate_Numbers instance;
+        public static BingoCard instance;
 
         void Awake()
         {
             if (instance != null && instance != this)
             {
-                instance = this;
+                Destroy(gameObject);
             }
+            instance = this;
         }
         private void Start()
         {
@@ -61,6 +62,8 @@ namespace Andres_Scene_Scripts
         public void SetBtnUninteractable(int Number)
         {
             TableBtns[Number].interactable = false;
+            Debug.Log(TableBtns[Number].interactable);
+            Debug.Log(TableBtns[Number].name);
         }
 
     }
