@@ -7,29 +7,17 @@ using System.Linq;
 
 namespace Andres_Scene_Scripts
 {
-    public class BingoCard : MonoBehaviour
+    public class BingoCard : Singleton<BingoCard>
     {
         public TMP_Text[] TxtBox;
         public List<int> Numbers = new List<int>();
         public Button[] TableBtns;
-        public GridManager gridManager;
         public int[] MarkedSpace;
         public GameObject[] BingoTxt;
 
-        public static BingoCard instance;
-
-        void Awake()
-        {
-            if (instance != null && instance != this)
-            {
-                Destroy(gameObject);
-            }
-            instance = this;
-        }
         private void Start()
         {
             PlayerSetup();
-            gridManager = GridManager.instance;
         }
 
         void PlayerSetup()

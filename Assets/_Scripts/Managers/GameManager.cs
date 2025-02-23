@@ -1,18 +1,11 @@
 using System;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
-    public static GameManager Instance;
-
     public GameState gameState;
 
     public static event Action<GameState> OnGameInit;
-
-    void Awake()
-    {
-        Instance = this;
-    }
 
     void Start()
     {

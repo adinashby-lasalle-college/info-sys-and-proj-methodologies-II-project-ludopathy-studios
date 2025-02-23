@@ -10,7 +10,7 @@ using UnityEngine.UI;
 namespace Andres_Scene_Scripts
 {
 
-    public class GridManager : MonoBehaviour
+    public class GridManager : Singleton<GridManager>
     {
 
         public static GridManager instance;
@@ -18,19 +18,11 @@ namespace Andres_Scene_Scripts
         public GameObject[] BallDrawnGO;
         public GameObject[] CanvasBlock;
 
-        void Awake()
-        {
-            if (instance != null && instance != this)
-            {
-                Destroy(gameObject);
-            }
-            instance = this;
-        }
         // Start is called before the first frame update
         void Start()
         {
             GameSetup();
-            bingoCardUI = BingoCard.instance;
+            bingoCardUI = BingoCard.Instance;
             BallDrawnGO = GameObject.FindGameObjectsWithTag("Holder");
         }
 
