@@ -1,18 +1,49 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class BingoCage : MonoBehaviour
 {
     [SerializeField] int randomNumber;
     [SerializeField] TMP_Text displayNumber;
-    [SerializeField] float drawInterval = 5f;
+    [SerializeField] float drawInterval = 0.5f;
     List<int> availableNumbers = new List<int>();
+    private bool isDrawing = true;
+
+    public List<int> calledNumbers = new List<int>();
 
     private void Start()
     {
         InitializeNumbers();
-        InvokeRepeating(nameof(CreateRandomNumber), 1f, drawInterval);
+        InvokeRepeating(nameof(CreateRandomNumber), 0.1f, drawInterval);
+    }
+
+    private void Update()
+    {
+      if(Input.GetKeyDown(KeyCode.Space) && isDrawing)
+      {
+        DrawBall();
+        isDrawing = false;
+      }
+      else if (!isDrawing && Input.GetKeyDown(KeyCode.Space))
+      {
+        Resume();
+        isDrawing = true;
+      }
+    }
+
+    private void DrawBall()
+    {
+        CancelInvoke(nameof(CreateRandomNumber));
+        Debug.Log(randomNumber);
+        availableNumbers.Remove(randomNumber);
+        calledNumbers.Add(randomNumber);
+    }
+
+    public void Resume()
+    {
+        InvokeRepeating(nameof(CreateRandomNumber), 0.1f, drawInterval);
     }
 
     private void InitializeNumbers()
@@ -26,7 +57,7 @@ public class BingoCage : MonoBehaviour
 
     private void CreateRandomNumber()
     {
-                if (availableNumbers.Count == 0)
+        if (availableNumbers.Count == 0)
         {
             displayNumber.text = "All numbers drawn!";
             CancelInvoke(nameof(CreateRandomNumber)); // Stop drawing when finished
@@ -35,7 +66,7 @@ public class BingoCage : MonoBehaviour
 
         int randomIndex = Random.Range(0, availableNumbers.Count);
         randomNumber = availableNumbers[randomIndex];
-        availableNumbers.RemoveAt(randomIndex); // Remove drawn number from the list
+      
 
         // Get the corresponding Bingo letter
         string bingoLetter = GetBingoLetter(randomNumber);
