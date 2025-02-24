@@ -165,7 +165,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomNumber: 0
   displayNumber: {fileID: 244281464}
-  drawInterval: 5
+  drawInterval: 0.2
+  calledNumbers: 
 --- !u!1 &244281462
 GameObject:
   m_ObjectHideFlags: 0
