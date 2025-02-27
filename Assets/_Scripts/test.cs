@@ -7,12 +7,12 @@ public class test : MonoBehaviour
 
     void Awake()
     {
-        GameManager.OnGameInit += DisplayBingoCard;
+        //GameManager.OnGameInit += DisplayBingoCard;
     }
 
     void OnDestroy()
     {
-        GameManager.OnGameInit -= DisplayBingoCard;
+        //GameManager.OnGameInit -= DisplayBingoCard;
     }
     private void DisplayBingoCard(GameState newState)
     {

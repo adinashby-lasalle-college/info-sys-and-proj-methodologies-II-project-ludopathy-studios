@@ -1,48 +1,68 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using System.Collections;
+using System;
 
-public class BingoCage : MonoBehaviour
+
+public class BingoCage : Singleton<BingoCage>
 {
     [SerializeField] int randomNumber;
     [SerializeField] TMP_Text displayNumber;
     [SerializeField] float drawInterval = 0.5f;
     List<int> availableNumbers = new List<int>();
-    private bool isDrawing = true;
-
+    private bool isDrawing = false;
     public List<int> calledNumbers = new List<int>();
 
-    private void Start()
+    public static event Action<int> OnBallDrawn;
+
+    protected override void Awake()
     {
-        InitializeNumbers();
-        InvokeRepeating(nameof(CreateRandomNumber), 0.1f, drawInterval);
+        base.Awake();
+        GameManager.OnStateChanged += OnStateChanged;
     }
 
-    private void Update()
+    private void OnDestroy()
     {
-      if(Input.GetKeyDown(KeyCode.Space) && isDrawing)
-      {
-        DrawBall();
-        isDrawing = false;
-      }
-      else if (!isDrawing && Input.GetKeyDown(KeyCode.Space))
-      {
-        Resume();
-        isDrawing = true;
-      }
+        GameManager.OnStateChanged -= OnStateChanged;
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && isDrawing)
+        {
+            DrawBall();
+        }
+    }
+    private void OnStateChanged(GameState newState)
+    {
+        switch (newState)
+        {
+            case GameState.GameInit:
+                InitializeNumbers();
+                break;
+            case GameState.BallDrawing:
+                isDrawing = true;
+                break;
+            default:
+                Debug.Log("State not implemented");
+                break;
+        }
     }
 
     private void DrawBall()
     {
+        isDrawing = false;
         CancelInvoke(nameof(CreateRandomNumber));
-        Debug.Log(randomNumber);
         availableNumbers.Remove(randomNumber);
         calledNumbers.Add(randomNumber);
+        OnBallDrawn?.Invoke(randomNumber);
+        GameManager.Instance.UpdateGameState(GameState.Evaluate);
     }
+
 
     public void Resume()
     {
+        isDrawing = true;
         InvokeRepeating(nameof(CreateRandomNumber), 0.1f, drawInterval);
     }
 
@@ -64,19 +84,19 @@ public class BingoCage : MonoBehaviour
             return;
         }
 
-        int randomIndex = Random.Range(0, availableNumbers.Count);
+        int randomIndex = UnityEngine.Random.Range(0, availableNumbers.Count);
         randomNumber = availableNumbers[randomIndex];
-      
+
 
         // Get the corresponding Bingo letter
         string bingoLetter = GetBingoLetter(randomNumber);
 
         // Update the UI with the letter and number
         displayNumber.text = bingoLetter + " " + randomNumber;
-        Debug.Log("Drawn Number: " + bingoLetter + " " + randomNumber);
+        //Debug.Log("Drawn Number: " + bingoLetter + " " + randomNumber);
     }
 
-        private string GetBingoLetter(int number)
+    private string GetBingoLetter(int number)
     {
         if (number >= 1 && number <= 15) return "B";
         if (number >= 16 && number <= 30) return "I";
