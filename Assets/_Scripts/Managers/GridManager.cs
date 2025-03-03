@@ -27,7 +27,6 @@ namespace Andres_Scene_Scripts
 
         void GameSetup()
         {
-            Debug.Log("Game Start");
         }
 
         public void OnClickCell(int Number)

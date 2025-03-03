@@ -3,23 +3,34 @@ using TMPro;
 using System.Collections.Generic;
 using System.Collections;
 using System;
+using UnityEngine.InputSystem;
 
 
 public class BingoCage : Singleton<BingoCage>
 {
     [SerializeField] int randomNumber;
     [SerializeField] TMP_Text displayNumber;
-    [SerializeField] float drawInterval = 0.5f;
+    [SerializeField] float drawInterval = 0.2f;
     List<int> availableNumbers = new List<int>();
-    private bool isDrawing = false;
-    public List<int> calledNumbers = new List<int>();
 
+    public List<int> calledNumbers = new List<int>();
     public static event Action<int> OnBallDrawn;
+
+    private InputAction drawBallAction;
+    private InputAction rollCageAction;
 
     protected override void Awake()
     {
         base.Awake();
         GameManager.OnStateChanged += OnStateChanged;
+    }
+
+    void Start()
+    {
+        drawBallAction = InputSystem.actions.FindAction("DrawBall");
+        drawBallAction.Disable();
+        rollCageAction = InputSystem.actions.FindAction("RollCage");
+        rollCageAction.Disable();
     }
 
     private void OnDestroy()
@@ -28,7 +39,11 @@ public class BingoCage : Singleton<BingoCage>
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isDrawing)
+        if (rollCageAction.IsPressed())
+        {
+            RollCage();
+        }
+        if (drawBallAction.IsPressed())
         {
             DrawBall();
         }
@@ -41,7 +56,7 @@ public class BingoCage : Singleton<BingoCage>
                 InitializeNumbers();
                 break;
             case GameState.BallDrawing:
-                isDrawing = true;
+                StartCoroutine(waitForNewCageRoll());
                 break;
             default:
                 Debug.Log("State not implemented");
@@ -49,21 +64,26 @@ public class BingoCage : Singleton<BingoCage>
         }
     }
 
+    IEnumerator waitForNewCageRoll()
+    {
+        yield return new WaitForSeconds(2f);
+        Debug.Log("You can roll the cage now");
+        rollCageAction.Enable();
+    }
     private void DrawBall()
     {
-        isDrawing = false;
+        drawBallAction.Disable();
         CancelInvoke(nameof(CreateRandomNumber));
         availableNumbers.Remove(randomNumber);
         calledNumbers.Add(randomNumber);
         OnBallDrawn?.Invoke(randomNumber);
         GameManager.Instance.UpdateGameState(GameState.Evaluate);
     }
-
-
-    public void Resume()
+    public void RollCage()
     {
-        isDrawing = true;
-        InvokeRepeating(nameof(CreateRandomNumber), 0.1f, drawInterval);
+        rollCageAction.Disable();
+        drawBallAction.Enable();
+        InvokeRepeating(nameof(CreateRandomNumber), 0, drawInterval);
     }
 
     private void InitializeNumbers()

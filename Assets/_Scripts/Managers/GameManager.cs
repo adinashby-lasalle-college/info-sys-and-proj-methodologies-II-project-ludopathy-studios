@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Andres_Scene_Scripts;
 using TMPro;
 using Unity.VisualScripting;
@@ -51,7 +52,6 @@ public class GameManager : Singleton<GameManager>
                 Debug.Log("PowerUpPlacement");
                 break;
             case GameState.BallDrawing:
-                BingoCage.Instance.Resume();
                 Debug.Log("Ball being drawn");
                 break;
             case GameState.Evaluate:
