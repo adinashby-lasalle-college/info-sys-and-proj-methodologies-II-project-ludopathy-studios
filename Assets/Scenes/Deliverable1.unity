@@ -593,7 +593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8444035a24824479ee5d7da60a91e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bingoCard: {fileID: 0}
+  bingoCard: {fileID: 976823294953606618}
 --- !u!1 &1188921514
 GameObject:
   m_ObjectHideFlags: 0

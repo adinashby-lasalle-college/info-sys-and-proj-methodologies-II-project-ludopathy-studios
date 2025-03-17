@@ -30,7 +30,7 @@ namespace Andres_Scene_Scripts
             PlayerSetup();
         }
 
-        void MarkNumber(int ball)
+        public void MarkNumber(int ball)
         {
             int bingoCardIndex = Numbers.IndexOf(ball);
 

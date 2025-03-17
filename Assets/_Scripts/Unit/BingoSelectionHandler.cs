@@ -22,9 +22,9 @@ namespace Andres_Scene_Scripts
 
         private IEnumerator WaitAndAssignPowerUps()
         {
-            yield return new WaitForSeconds(0.5f); 
+            yield return new WaitForSeconds(0.5f);
             AssignRandomPowerUps(5);
-        }   
+        }
 
         public void OnSelectCell(int selectedIndex)
         {
@@ -43,11 +43,11 @@ namespace Andres_Scene_Scripts
             // Highlight row and column
             foreach (int index in rowIndexes)
             {
-                bingoCard.TableBtns[index].GetComponent<Image>().color = highlightColor;
+                bingoCard.MarkNumber(bingoCard.Numbers[index]);
             }
             foreach (int index in colIndexes)
             {
-                bingoCard.TableBtns[index].GetComponent<Image>().color = highlightColor;
+                bingoCard.MarkNumber(bingoCard.Numbers[index]);
             }
 
             // Check if selected number has a power-up
@@ -60,44 +60,44 @@ namespace Andres_Scene_Scripts
 
         private void AssignRandomPowerUps(int count)
         {
-                List<int> availableNumbers = new List<int>();
+            List<int> availableNumbers = new List<int>();
 
-    foreach (TMP_Text txt in bingoCard.TxtBox)
-    {
-        string cleanedText = txt.text.Trim(); 
+            foreach (TMP_Text txt in bingoCard.TxtBox)
+            {
+                string cleanedText = txt.text.Trim();
 
-        if (string.IsNullOrEmpty(cleanedText)) 
-        {
-            Debug.LogWarning("Skipping empty cell in BingoCard.");
-            continue;
+                if (string.IsNullOrEmpty(cleanedText))
+                {
+                    Debug.LogWarning("Skipping empty cell in BingoCard.");
+                    continue;
+                }
+
+                int number;
+                if (int.TryParse(cleanedText, out number))
+                {
+                    availableNumbers.Add(number);
+                }
+                else
+                {
+                    Debug.LogWarning($"Invalid number in BingoCard: '{cleanedText}'");
+                }
+            }
+
+            if (availableNumbers.Count < count)
+            {
+                Debug.LogError("Not enough valid numbers to assign power-ups!");
+                return;
+            }
+
+            for (int i = 0; i < count; i++)
+            {
+                int randomIndex = Random.Range(0, availableNumbers.Count);
+                powerUpNumbers.Add(availableNumbers[randomIndex]);
+                availableNumbers.RemoveAt(randomIndex);
+            }
+
+            Debug.Log("Power-up numbers: " + string.Join(", ", powerUpNumbers));
         }
-
-        int number;
-        if (int.TryParse(cleanedText, out number)) 
-        {
-            availableNumbers.Add(number);
-        }
-        else
-        {
-            Debug.LogWarning($"Invalid number in BingoCard: '{cleanedText}'"); 
-        }
-    }
-
-    if (availableNumbers.Count < count)
-    {
-        Debug.LogError("Not enough valid numbers to assign power-ups!");
-        return;
-    }
-
-    for (int i = 0; i < count; i++)
-    {
-        int randomIndex = Random.Range(0, availableNumbers.Count);
-        powerUpNumbers.Add(availableNumbers[randomIndex]);
-        availableNumbers.RemoveAt(randomIndex);
-    }
-
-    Debug.Log("Power-up numbers: " + string.Join(", ", powerUpNumbers));
-}
 
         private List<int> GetRowIndexes(int selectedIndex)
         {
@@ -112,10 +112,10 @@ namespace Andres_Scene_Scripts
 
         void DisplayRowNumbers(List<int> rowIndexes)
         {
-            for(int i = 0; i < rowIndexes.Count; i++)
+            for (int i = 0; i < rowIndexes.Count; i++)
             {
                 Debug.Log("Row numbers " + bingoCard.TxtBox[rowIndexes[i]].text);
-                
+
             }
         }
 
