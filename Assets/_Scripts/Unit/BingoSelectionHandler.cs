@@ -97,7 +97,7 @@ namespace Andres_Scene_Scripts
     }
 
     Debug.Log("Power-up numbers: " + string.Join(", ", powerUpNumbers));
-        }
+}
 
         private List<int> GetRowIndexes(int selectedIndex)
         {
@@ -108,6 +108,21 @@ namespace Andres_Scene_Scripts
                 rowIndexes.Add((row * 5) + col);
             }
             return rowIndexes;
+        }
+
+        void DisplayRowNumbers(List<int> rowIndexes)
+        {
+            for(int i = 0; i < rowIndexes.Count; i++)
+            {
+                Debug.Log("Row numbers " + bingoCard.TxtBox[rowIndexes[i]].text);
+                
+            }
+        }
+
+        void OnClickTest(int selectedNumber)
+        {
+            List<int> indexes = GetRowIndexes(selectedNumber);
+            DisplayRowNumbers(indexes);
         }
 
         private List<int> GetColumnIndexes(int selectedIndex)
