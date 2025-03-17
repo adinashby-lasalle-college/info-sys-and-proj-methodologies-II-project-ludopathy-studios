@@ -42,8 +42,10 @@ public class BingoCage : Singleton<BingoCage>
         if (rollCageAction.IsPressed())
         {
             RollCage();
+            drawBallAction.Enable();
+            return;
         }
-        if (drawBallAction.IsPressed())
+        else if (drawBallAction.IsPressed())
         {
             DrawBall();
         }
@@ -82,7 +84,6 @@ public class BingoCage : Singleton<BingoCage>
     public void RollCage()
     {
         rollCageAction.Disable();
-        drawBallAction.Enable();
         InvokeRepeating(nameof(CreateRandomNumber), 0, drawInterval);
     }
 

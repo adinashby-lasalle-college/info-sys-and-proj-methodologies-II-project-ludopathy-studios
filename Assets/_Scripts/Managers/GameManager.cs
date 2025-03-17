@@ -52,7 +52,7 @@ public class GameManager : Singleton<GameManager>
                 Debug.Log("PowerUpPlacement");
                 break;
             case GameState.BallDrawing:
-                Debug.Log("Ball being drawn");
+                Debug.Log("BallDrawing state");
                 break;
             case GameState.Evaluate:
                 Debug.Log("Evaluating");

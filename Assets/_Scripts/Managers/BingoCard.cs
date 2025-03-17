@@ -18,26 +18,30 @@ namespace Andres_Scene_Scripts
         protected override void Awake()
         {
             base.Awake();
-            BingoCage.OnBallDrawn += OnBallDrawn;
+            BingoCage.OnBallDrawn += MarkNumber;
         }
 
         void OnDestroy()
         {
-            BingoCage.OnBallDrawn -= OnBallDrawn;
+            BingoCage.OnBallDrawn -= MarkNumber;
         }
         private void Start()
         {
             PlayerSetup();
         }
 
-        void OnBallDrawn(int ball)
+        void MarkNumber(int ball)
         {
             int bingoCardIndex = Numbers.IndexOf(ball);
-            Debug.Log(bingoCardIndex);
+
             if (bingoCardIndex != -1)
             {
                 MarkedSpace[bingoCardIndex] = 1;
                 TableBtns[bingoCardIndex].interactable = false;
+            }
+            else
+            {
+                Debug.Log(ball + " is not on bingoCard");
             }
 
         }
