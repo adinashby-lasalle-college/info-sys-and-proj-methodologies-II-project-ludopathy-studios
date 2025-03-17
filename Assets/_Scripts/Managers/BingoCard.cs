@@ -1,9 +1,9 @@
-using System.Collections;
+
+
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using System.Linq;
 
 namespace Andres_Scene_Scripts
 {
@@ -15,9 +15,35 @@ namespace Andres_Scene_Scripts
         public int[] MarkedSpace;
         public GameObject[] BingoTxt;
 
+        protected override void Awake()
+        {
+            base.Awake();
+            BingoCage.OnBallDrawn += MarkNumber;
+        }
+
+        void OnDestroy()
+        {
+            BingoCage.OnBallDrawn -= MarkNumber;
+        }
         private void Start()
         {
             PlayerSetup();
+        }
+
+        void MarkNumber(int ball)
+        {
+            int bingoCardIndex = Numbers.IndexOf(ball);
+
+            if (bingoCardIndex != -1)
+            {
+                MarkedSpace[bingoCardIndex] = 1;
+                TableBtns[bingoCardIndex].interactable = false;
+            }
+            else
+            {
+                Debug.Log(ball + " is not on bingoCard");
+            }
+
         }
 
         void PlayerSetup()
@@ -47,12 +73,16 @@ namespace Andres_Scene_Scripts
             }
         }
 
-        public void SetBtnUninteractable(int Number)
+        public bool isBingo()
         {
-            TableBtns[Number].interactable = false;
-            Debug.Log(TableBtns[Number].interactable);
-            Debug.Log(TableBtns[Number].name);
+            for (int i = 0; i < MarkedSpace.Length; i++)
+            {
+                if (MarkedSpace[i] == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
-
     }
 }

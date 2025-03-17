@@ -13,7 +13,6 @@ namespace Andres_Scene_Scripts
     public class GridManager : Singleton<GridManager>
     {
 
-        public static GridManager instance;
         BingoCard bingoCardUI;
         public GameObject[] BallDrawnGO;
         public GameObject[] CanvasBlock;
@@ -28,7 +27,6 @@ namespace Andres_Scene_Scripts
 
         void GameSetup()
         {
-            Debug.Log("Game Start");
         }
 
         public void OnClickCell(int Number)
