@@ -36,14 +36,32 @@ namespace Andres_Scene_Scripts
 
             if (bingoCardIndex != -1)
             {
+                GameManager.Instance.tornado.Power();
                 MarkedSpace[bingoCardIndex] = 1;
                 TableBtns[bingoCardIndex].interactable = false;
+                ScoreManager.Instance.IncreasePlayerPoints(50);
             }
             else
             {
                 Debug.Log(ball + " is not on bingoCard");
             }
 
+        }
+
+        public void ReturnBall(int ball)
+        {
+            int bingoCardIndex = Numbers.IndexOf(ball);
+
+            if (bingoCardIndex != -1)
+            {
+                MarkedSpace[bingoCardIndex] = 0;
+                TableBtns[bingoCardIndex].interactable = true;
+                ScoreManager.Instance.DecreasePlayerPoints(50);
+            }
+            else
+            {
+                Debug.Log(ball + " is not on bingoCard");
+            }
         }
 
         void PlayerSetup()

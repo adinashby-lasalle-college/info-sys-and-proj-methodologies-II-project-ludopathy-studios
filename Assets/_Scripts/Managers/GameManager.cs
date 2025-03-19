@@ -10,10 +10,10 @@ public class GameManager : Singleton<GameManager>
 {
     public GameState gameState;
     [SerializeField] TMP_Text turnText;
+    [SerializeField] int maxTurns = 15;
     public static event Action<GameState> OnStateChanged;
-
     private int currentTurn;
-    private int maxTurns = 15;
+    public IPowerUp tornado;
 
     protected override void Awake()
     {
@@ -22,6 +22,7 @@ public class GameManager : Singleton<GameManager>
     void Start()
     {
         UpdateGameState(GameState.GameInit);
+        tornado = new Tornado(0);
     }
 
     public void UpdateGameState(GameState newState)

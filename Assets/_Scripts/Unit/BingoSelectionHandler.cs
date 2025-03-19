@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Andres_Scene_Scripts
 {
-    public class BingoSelectionHandler : MonoBehaviour
+    public class BingoSelectionHandler : Singleton<BingoSelectionHandler>
     {
         public BingoCard bingoCard;
         private Color defaultColor = Color.white;
@@ -99,7 +99,7 @@ namespace Andres_Scene_Scripts
             Debug.Log("Power-up numbers: " + string.Join(", ", powerUpNumbers));
         }
 
-        private List<int> GetRowIndexes(int selectedIndex)
+        public List<int> GetRowIndexes(int selectedIndex)
         {
             int row = selectedIndex / 5;
             List<int> rowIndexes = new List<int>();

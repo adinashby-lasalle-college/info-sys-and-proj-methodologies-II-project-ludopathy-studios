@@ -10,12 +10,11 @@ public class BingoCage : Singleton<BingoCage>
 {
     [SerializeField] int randomNumber;
     [SerializeField] TMP_Text displayNumber;
+    [SerializeField] float waitCageRoll = 1f;
     [SerializeField] float drawInterval = 0.2f;
-    List<int> availableNumbers = new List<int>();
-
+    public List<int> availableNumbers = new List<int>();
     public List<int> calledNumbers = new List<int>();
     public static event Action<int> OnBallDrawn;
-
     private PlayerInputActions inputActions;
 
     private bool isRolling = true;
@@ -55,16 +54,14 @@ public class BingoCage : Singleton<BingoCage>
                 inputActions.Disable();
                 break;
             default:
-                Debug.Log("State not implemented");
                 break;
         }
     }
 
     IEnumerator WaitForNewCageRoll()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(waitCageRoll);
         inputActions.Enable();
-        Debug.Log("You can roll the cage now");
     }
     private void DrawBall()
     {
