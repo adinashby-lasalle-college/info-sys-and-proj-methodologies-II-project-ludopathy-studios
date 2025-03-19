@@ -9,7 +9,6 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     public GameState gameState;
-
     [SerializeField] TMP_Text turnText;
     public static event Action<GameState> OnStateChanged;
 

@@ -3,7 +3,7 @@ using TMPro;
 using System.Collections.Generic;
 using System.Collections;
 using System;
-using UnityEngine.InputSystem;
+
 
 
 public class BingoCage : Singleton<BingoCage>
@@ -16,40 +16,31 @@ public class BingoCage : Singleton<BingoCage>
     public List<int> calledNumbers = new List<int>();
     public static event Action<int> OnBallDrawn;
 
-    private InputAction drawBallAction;
-    private InputAction rollCageAction;
+    private PlayerInputActions inputActions;
 
+    private bool isRolling = true;
     protected override void Awake()
     {
         base.Awake();
+        inputActions = new PlayerInputActions();
+    }
+    void OnEnable()
+    {
+        inputActions.Enable();
+        inputActions.Player.RollCage.performed += ctx => RollCage();
+        inputActions.Player.DrawBall.performed += ctx => ToggleAction();
         GameManager.OnStateChanged += OnStateChanged;
+
     }
 
-    void Start()
+    void OnDisable()
     {
-        drawBallAction = InputSystem.actions.FindAction("DrawBall");
-        drawBallAction.Disable();
-        rollCageAction = InputSystem.actions.FindAction("RollCage");
-        rollCageAction.Disable();
-    }
-
-    private void OnDestroy()
-    {
+        inputActions.Player.RollCage.performed += ctx => RollCage();
+        inputActions.Player.DrawBall.performed += ctx => ToggleAction();
+        inputActions.Disable();
         GameManager.OnStateChanged -= OnStateChanged;
     }
-    void Update()
-    {
-        if (rollCageAction.IsPressed())
-        {
-            RollCage();
-            drawBallAction.Enable();
-            return;
-        }
-        else if (drawBallAction.IsPressed())
-        {
-            DrawBall();
-        }
-    }
+
     private void OnStateChanged(GameState newState)
     {
         switch (newState)
@@ -58,7 +49,10 @@ public class BingoCage : Singleton<BingoCage>
                 InitializeNumbers();
                 break;
             case GameState.BallDrawing:
-                StartCoroutine(waitForNewCageRoll());
+                StartCoroutine(WaitForNewCageRoll());
+                break;
+            case GameState.Evaluate:
+                inputActions.Disable();
                 break;
             default:
                 Debug.Log("State not implemented");
@@ -66,25 +60,35 @@ public class BingoCage : Singleton<BingoCage>
         }
     }
 
-    IEnumerator waitForNewCageRoll()
+    IEnumerator WaitForNewCageRoll()
     {
         yield return new WaitForSeconds(2f);
+        inputActions.Enable();
         Debug.Log("You can roll the cage now");
-        rollCageAction.Enable();
     }
     private void DrawBall()
     {
-        drawBallAction.Disable();
         CancelInvoke(nameof(CreateRandomNumber));
         availableNumbers.Remove(randomNumber);
         calledNumbers.Add(randomNumber);
         OnBallDrawn?.Invoke(randomNumber);
         GameManager.Instance.UpdateGameState(GameState.Evaluate);
     }
-    public void RollCage()
+    private void RollCage()
     {
-        rollCageAction.Disable();
-        InvokeRepeating(nameof(CreateRandomNumber), 0, drawInterval);
+        if (!isRolling)
+        {
+            InvokeRepeating(nameof(CreateRandomNumber), 0, drawInterval);
+        }
+        else
+        {
+            DrawBall();
+        }
+    }
+
+    private void ToggleAction()
+    {
+        isRolling = !isRolling;
     }
 
     private void InitializeNumbers()
@@ -114,7 +118,7 @@ public class BingoCage : Singleton<BingoCage>
 
         // Update the UI with the letter and number
         displayNumber.text = bingoLetter + " " + randomNumber;
-        //Debug.Log("Drawn Number: " + bingoLetter + " " + randomNumber);
+
     }
 
     private string GetBingoLetter(int number)
