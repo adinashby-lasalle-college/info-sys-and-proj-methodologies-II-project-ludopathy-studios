@@ -28,6 +28,8 @@ namespace Andres_Scene_Scripts{
 
             int col= 0;
             int row = 0;
+            
+            BingoTxt = GameObject.FindGameObjectsWithTag("Bingo");
 
             // Assigning number to button text on the grid
             for (int j = 0; j < TxtBox.Length; j++)
@@ -56,39 +58,53 @@ namespace Andres_Scene_Scripts{
             PlBtns[Number].interactable = false;
         }
 
-        public void WinCondition()
+        public bool BingoCondition()
         {
-            //Hotizontal
-            int s1 = MarkedSpace[0] + MarkedSpace[1] + MarkedSpace[2] + MarkedSpace[3] + MarkedSpace[4];
-            int s2 = MarkedSpace[5] + MarkedSpace[6] + MarkedSpace[7] + MarkedSpace[8] + MarkedSpace[9];
-            int s3 = MarkedSpace[10] + MarkedSpace[11] + MarkedSpace[12] + MarkedSpace[13] + MarkedSpace[14];
-            int s4 = MarkedSpace[15] + MarkedSpace[16] + MarkedSpace[17] + MarkedSpace[18] + MarkedSpace[19];
-            int s5 = MarkedSpace[20] + MarkedSpace[21] + MarkedSpace[22] + MarkedSpace[23] + MarkedSpace[24];
+            int[] winConditions = new int[]
+            {
+                //Horizontal
+            MarkedSpace[0] + MarkedSpace[1] + MarkedSpace[2] + MarkedSpace[3] + MarkedSpace[4],
+            MarkedSpace[5] + MarkedSpace[6] + MarkedSpace[7] + MarkedSpace[8] + MarkedSpace[9],
+            MarkedSpace[10] + MarkedSpace[11] + MarkedSpace[12] + MarkedSpace[13] + MarkedSpace[14],
+            MarkedSpace[15] + MarkedSpace[16] + MarkedSpace[17] + MarkedSpace[18] + MarkedSpace[19],
+            MarkedSpace[20] + MarkedSpace[21] + MarkedSpace[22] + MarkedSpace[23] + MarkedSpace[24],
             
             //Vertical
-            int s6 = MarkedSpace[0] + MarkedSpace[5] + MarkedSpace[10] + MarkedSpace[15] + MarkedSpace[20];
-            int s7 = MarkedSpace[1] + MarkedSpace[6] + MarkedSpace[11] + MarkedSpace[16] + MarkedSpace[21];
-            int s8 = MarkedSpace[2] + MarkedSpace[7] + MarkedSpace[12] + MarkedSpace[17] + MarkedSpace[22];
-            int s9 = MarkedSpace[3] + MarkedSpace[8] + MarkedSpace[13] + MarkedSpace[18] + MarkedSpace[23];
-            int s10 = MarkedSpace[4] + MarkedSpace[9] + MarkedSpace[14] + MarkedSpace[19] + MarkedSpace[24];
+            MarkedSpace[0] + MarkedSpace[5] + MarkedSpace[10] + MarkedSpace[15] + MarkedSpace[20],
+            MarkedSpace[1] + MarkedSpace[6] + MarkedSpace[11] + MarkedSpace[16] + MarkedSpace[21],
+            MarkedSpace[2] + MarkedSpace[7] + MarkedSpace[12] + MarkedSpace[17] + MarkedSpace[22],
+            MarkedSpace[3] + MarkedSpace[8] + MarkedSpace[13] + MarkedSpace[18] + MarkedSpace[23],
+            MarkedSpace[4] + MarkedSpace[9] + MarkedSpace[14] + MarkedSpace[19] + MarkedSpace[24],
 
             //Diagonal
-            int s11 = MarkedSpace[0] + MarkedSpace[6] + MarkedSpace[12] + MarkedSpace[18] + MarkedSpace[24];
-            int s12 = MarkedSpace[4] + MarkedSpace[8] + MarkedSpace[12] + MarkedSpace[16] + MarkedSpace[20];   
+            MarkedSpace[0] + MarkedSpace[6] + MarkedSpace[12] + MarkedSpace[18] + MarkedSpace[24],
+            MarkedSpace[4] + MarkedSpace[8] + MarkedSpace[12] + MarkedSpace[16] + MarkedSpace[20]   
 
-            var solution = new int[] { s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12};
+            };
+            
+            // var solution = new int[] { s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12};
 
-            int SumOfMarkedSpace = -1;
-
-            foreach(var sol in solution)
+                    foreach (int sum in winConditions)
             {
-                if(sol == 5)
-                {
-                    SumOfMarkedSpace++;
-                    Debug.Log(gameObject.name + " " + SumOfMarkedSpace);
-                    BingoTxt[SumOfMarkedSpace].SetActive(true);
-                }
+                Debug.Log("Checking sum: " + sum);
+                if (sum == 5)
+                    Debug.Log("Bingo");
+                    //BingoTxt[0].SetActive(true); 
+                    return true; // Player 1 wins
             }
+
+            return false; // No win yet
         }
+            // int SumOfMarkedSpace = -1;
+
+            // foreach(var sol in solution)
+            // {
+            //     if(sol == 5)
+            //     {
+            //         //Debug.Log(gameObject.name + " " );
+            //         //BingoTxt[].SetActive(true);
+            //     }
+            
+        
     }
 }

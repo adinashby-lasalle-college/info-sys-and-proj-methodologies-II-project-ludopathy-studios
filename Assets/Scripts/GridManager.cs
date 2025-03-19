@@ -19,6 +19,8 @@ public class GridManager : MonoBehaviour
 
     public GameObject[] CanvasBlock;
 
+    public GameObject[] BingoTxt;
+
     public string SelectedNum1;
     public string SelectedNum2;
 
@@ -35,34 +37,27 @@ public class GridManager : MonoBehaviour
         TurnCount = 0;
 
         TurnIcon = GameObject.FindGameObjectsWithTag("Holder");
+        // BingoTxt = GameObject.FindGameObjectsWithTag("Bingo");
 
         TurnIcon[0].SetActive(true);
-        TurnIcon[1].SetActive(false);
-
-        CanvasBlock[0].SetActive(false);
-        CanvasBlock[1].SetActive(true);
+        // CanvasBlock[0].SetActive(false);
+        
     }
 
     public void GridButtons(int Number)
     {
         var Pl1 = Player[0].GetComponentInChildren<Generate_Numbers>();
-        // var Pl2 = Player[1].GetComponentInChildren<Generate_Numbers>();
-
-        //Change Player on Button Click - 0 - player 1, 1 - player 2 
+        
         if (Turn == 0)
         {
             Turn = 1;
             TurnIcon[0].SetActive(false);
-            //TurnIcon[1].SetActive(true);
-
             CanvasBlock[0].SetActive(true);
-            //CanvasBlock[1].SetActive(false);
 
             Pl1.MarkedSpace[Number] = 1;
             SelectedNum1 = Pl1.TxtBox[Number].text;
                     
-
-            Pl1.WinCondition();
+            Pl1.BingoCondition();
         }
         else
         {
@@ -71,11 +66,11 @@ public class GridManager : MonoBehaviour
             TurnIcon[0].SetActive(true);
             //TurnIcon[1].SetActive(false);
 
-            CanvasBlock[0].SetActive(false);
+            CanvasBlock[0].SetActive(true);
             //CanvasBlock[1].SetActive(true);
 
-            // Pl2.MarkedSpace[Number] = 1;
-            // SelectedNum2 = Pl2.TxtBox[Number].text;
+             Pl1.MarkedSpace[Number] = 1;
+             SelectedNum1 = Pl1.TxtBox[Number].text;
 
             int TboxLength = Pl1.TxtBox.Length;
             for (int i = 0; i < TboxLength; i++)
@@ -85,7 +80,6 @@ public class GridManager : MonoBehaviour
                 {
                     Pl1.PlBtns[i].interactable = false;
 
-                    Pl1.MarkedSpace[i] = 1;
                 }
             }
 
