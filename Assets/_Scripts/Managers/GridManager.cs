@@ -32,7 +32,7 @@ namespace Andres_Scene_Scripts
         public void OnClickCell(int Number)
         {
             bingoCardUI.MarkedSpace[Number] = 1;
-            bingoCardUI.TableBtns[Number].interactable = false;
+            bingoCardUI.BingoCardBtns[Number].interactable = false;
         }
     }
 }

@@ -43,17 +43,17 @@ namespace Andres_Scene_Scripts
             // Highlight row and column
             foreach (int index in rowIndexes)
             {
-                bingoCard.MarkNumber(bingoCard.Numbers[index]);
+                //bingoCard.MarkNumber(bingoCard.Numbers[index]);
             }
             foreach (int index in colIndexes)
             {
-                bingoCard.MarkNumber(bingoCard.Numbers[index]);
+                //bingoCard.MarkNumber(bingoCard.Numbers[index]);
             }
 
             // Check if selected number has a power-up
             if (powerUpNumbers.Contains(selectedNumber))
             {
-                bingoCard.TableBtns[selectedIndex].GetComponent<Image>().color = powerUpColor;
+                bingoCard.BingoCardBtns[selectedIndex].GetComponent<Image>().color = powerUpColor;
                 ActivatePowerUp(selectedNumber);
             }
         }
@@ -138,7 +138,7 @@ namespace Andres_Scene_Scripts
 
         private void ResetHighlights()
         {
-            foreach (Button btn in bingoCard.TableBtns)
+            foreach (Button btn in bingoCard.BingoCardBtns)
             {
                 btn.GetComponent<Image>().color = defaultColor;
             }

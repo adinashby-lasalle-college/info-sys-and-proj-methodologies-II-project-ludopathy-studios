@@ -7,7 +7,7 @@ public interface IPowerUp
     void Power();
 }
 
-public class Tornado : IPowerUp
+public class Tornado : MonoBehaviour, IPowerUp
 {
     int index;
 
@@ -24,19 +24,13 @@ public class Tornado : IPowerUp
         {
             if (BingoCard.Instance.MarkedSpace[index] == 0)
             {
-                BingoCard.Instance.MarkNumber(BingoCard.Instance.Numbers[index]);
-                BingoCage.Instance.availableNumbers.Add(BingoCard.Instance.Numbers[index]);
+                BingoCard.Instance.MarkNumber(BingoCard.Instance.PlayerNumbers[index]);
             }
             else
             {
-                BingoCard.Instance.ReturnBall(BingoCard.Instance.Numbers[index]);
-                BingoCage.Instance.availableNumbers.Remove(BingoCard.Instance.Numbers[index]);
+                BingoCard.Instance.UnmarkNumber(BingoCard.Instance.PlayerNumbers[index]);
+                BingoCage.Instance.ReturnBall(BingoCard.Instance.PlayerNumbers[index]);
             }
         }
-
-
-
     }
-
-
 }

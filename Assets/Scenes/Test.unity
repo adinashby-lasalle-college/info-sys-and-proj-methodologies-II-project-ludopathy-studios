@@ -163,12 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abbcb7a0122486e4ca9e60811bae5d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomNumber: 0
   displayNumber: {fileID: 580115168}
   waitCageRoll: 1
   drawInterval: 0.2
-  availableNumbers: 
-  calledNumbers: 
 --- !u!1 &116615688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1222,6 +1219,7 @@ GameObject:
   - component: {fileID: 7354265153235609615}
   - component: {fileID: 879219652996097156}
   - component: {fileID: 4157453163475128231}
+  - component: {fileID: 7354265153235609616}
   m_Layer: 5
   m_Name: Button 1
   m_TagString: Untagged
@@ -1619,8 +1617,8 @@ MonoBehaviour:
   - {fileID: 8530613230900229693}
   - {fileID: 3266906300192105020}
   - {fileID: 4970347592387668375}
-  Numbers: 
-  TableBtns:
+  PlayerNumbers: 
+  BingoCardBtns:
   - {fileID: 4157453163475128231}
   - {fileID: 5634670591320385668}
   - {fileID: 4874546770226287710}
@@ -1647,6 +1645,7 @@ MonoBehaviour:
   - {fileID: 5793640003981417766}
   - {fileID: 7271471700631344394}
   MarkedSpace: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Cells: []
 --- !u!114 &983407446172357503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6730,6 +6729,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455565978226525556}
   m_CullTransparentMesh: 1
+--- !u!114 &7354265153235609616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455565978226525556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c65b44c582a5ff34ba5aeaa9a08f4df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UItext: {fileID: 0}
+  btn: {fileID: 0}
+  number: 0
+  isMarked: 0
 --- !u!224 &7474168480424602412
 RectTransform:
   m_ObjectHideFlags: 0

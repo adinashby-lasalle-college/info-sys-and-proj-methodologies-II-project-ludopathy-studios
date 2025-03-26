@@ -8,16 +8,16 @@ using System;
 
 public class BingoCage : Singleton<BingoCage>
 {
-    [SerializeField] int randomNumber;
     [SerializeField] TMP_Text displayNumber;
     [SerializeField] float waitCageRoll = 1f;
     [SerializeField] float drawInterval = 0.2f;
-    public List<int> availableNumbers = new List<int>();
-    public List<int> calledNumbers = new List<int>();
+    public List<Ball> availableBalls = new List<Ball>();
+    public List<Ball> calledBalls = new List<Ball>();
+
     public static event Action<int> OnBallDrawn;
     private PlayerInputActions inputActions;
-
-    private bool isRolling = true;
+    Ball randomBall;
+    bool isRolling = true;
     protected override void Awake()
     {
         base.Awake();
@@ -45,7 +45,7 @@ public class BingoCage : Singleton<BingoCage>
         switch (newState)
         {
             case GameState.GameInit:
-                InitializeNumbers();
+                InitializeBalls();
                 break;
             case GameState.BallDrawing:
                 StartCoroutine(WaitForNewCageRoll());
@@ -65,20 +65,21 @@ public class BingoCage : Singleton<BingoCage>
     }
     private void DrawBall()
     {
-        CancelInvoke(nameof(CreateRandomNumber));
-        availableNumbers.Remove(randomNumber);
-        calledNumbers.Add(randomNumber);
-        OnBallDrawn?.Invoke(randomNumber);
+        availableBalls.Add(randomBall);
+        calledBalls.Remove(randomBall);
+
+        OnBallDrawn?.Invoke(randomBall.Number);
         GameManager.Instance.UpdateGameState(GameState.Evaluate);
     }
     private void RollCage()
     {
         if (!isRolling)
         {
-            InvokeRepeating(nameof(CreateRandomNumber), 0, drawInterval);
+            InvokeRepeating(nameof(PickRandomBall), 0, drawInterval);
         }
         else
         {
+            CancelInvoke(nameof(PickRandomBall));
             DrawBall();
         }
     }
@@ -88,33 +89,45 @@ public class BingoCage : Singleton<BingoCage>
         isRolling = !isRolling;
     }
 
-    private void InitializeNumbers()
+    public void ReturnBall(int number)
     {
-        availableNumbers.Clear();
+        foreach (Ball ball in calledBalls)
+        {
+            if (ball.Number == number)
+            {
+                availableBalls.Add(ball);
+                calledBalls.Remove(ball);
+                break;
+            }
+        }
+    }
+    private void InitializeBalls()
+    {
+        availableBalls.Clear();
         for (int i = 1; i <= 75; i++)
         {
-            availableNumbers.Add(i);
+            availableBalls.Add(new Ball(i));
         }
     }
 
-    private void CreateRandomNumber()
+    private void PickRandomBall()
     {
-        if (availableNumbers.Count == 0)
+        if (availableBalls.Count == 0)
         {
-            displayNumber.text = "All numbers drawn!";
-            CancelInvoke(nameof(CreateRandomNumber)); // Stop drawing when finished
+            displayNumber.text = "All balls called!";
+            CancelInvoke(nameof(PickRandomBall)); // Stop drawing when finished
             return;
         }
 
-        int randomIndex = UnityEngine.Random.Range(0, availableNumbers.Count);
-        randomNumber = availableNumbers[randomIndex];
+        int randomIndex = UnityEngine.Random.Range(0, availableBalls.Count);
+        randomBall = availableBalls[randomIndex];
 
 
         // Get the corresponding Bingo letter
-        string bingoLetter = GetBingoLetter(randomNumber);
+        string bingoLetter = GetBingoLetter(randomBall.Number);
 
         // Update the UI with the letter and number
-        displayNumber.text = bingoLetter + " " + randomNumber;
+        displayNumber.text = bingoLetter + " " + randomBall.Number;
 
     }
 
