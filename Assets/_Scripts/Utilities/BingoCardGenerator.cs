@@ -1,12 +1,11 @@
-
+using System;
+using System.Collections.Generic;
 using System.Linq;
-
-
 public static class BingoCardGenerator
 {
-    static System.Random random = new System.Random();
+    static Random random = new Random();
 
-    public static int[,] GenerateBingoCard()
+    public static List<int> GenerateBingoCard()
     {
         int[,] bingoCard = new int[5, 5];
 
@@ -26,7 +25,10 @@ public static class BingoCardGenerator
             }
         }
 
-        return bingoCard;
+        // Transform the 2D array into a list
+        List<int> flatList = bingoCard.Cast<int>().ToList();
+
+        return flatList;
     }
 
 

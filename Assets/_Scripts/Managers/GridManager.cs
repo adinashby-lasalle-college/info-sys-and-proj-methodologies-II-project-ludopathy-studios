@@ -29,10 +29,10 @@ namespace Andres_Scene_Scripts
         {
         }
 
-        public void OnClickCell(int Number)
-        {
-            bingoCardUI.MarkedSpace[Number] = 1;
-            bingoCardUI.BingoCardBtns[Number].interactable = false;
-        }
+        // public void OnClickCell(int Number)
+        // {
+        //     bingoCardUI.MarkedSpace[Number] = 1;
+        //     bingoCardUI.BingoCardBtns[Number].interactable = false;
+        // }
     }
 }

@@ -73,11 +73,11 @@ public class GameManager : Singleton<GameManager>
     {
         currentTurn++;
         turnText.text = "Turn: " + currentTurn + "/" + maxTurns;
-        if (BingoCard.Instance.isBingo())
-        {
-            UpdateGameState(GameState.Win);
-        }
-        else if (currentTurn >= maxTurns)
+        // if (BingoCard.Instance.isBingo())
+        // {
+        //     UpdateGameState(GameState.Win);
+        // }
+        if (currentTurn >= maxTurns)
         {
             UpdateGameState(GameState.Lose);
         }

@@ -36,7 +36,7 @@ namespace Andres_Scene_Scripts
 
             ResetHighlights(); // Clear previous highlights
 
-            int selectedNumber = int.Parse(bingoCard.TxtBox[selectedIndex].text);
+            //int selectedNumber = int.Parse(bingoCard.TxtBox[selectedIndex].text);
             List<int> rowIndexes = GetRowIndexes(selectedIndex);
             List<int> colIndexes = GetColumnIndexes(selectedIndex);
 
@@ -51,37 +51,37 @@ namespace Andres_Scene_Scripts
             }
 
             // Check if selected number has a power-up
-            if (powerUpNumbers.Contains(selectedNumber))
-            {
-                bingoCard.BingoCardBtns[selectedIndex].GetComponent<Image>().color = powerUpColor;
-                ActivatePowerUp(selectedNumber);
-            }
+            // if (powerUpNumbers.Contains(selectedNumber))
+            // {
+            //     bingoCard.BingoCardBtns[selectedIndex].GetComponent<Image>().color = powerUpColor;
+            //     ActivatePowerUp(selectedNumber);
+            // }
         }
 
         private void AssignRandomPowerUps(int count)
         {
             List<int> availableNumbers = new List<int>();
 
-            foreach (TMP_Text txt in bingoCard.TxtBox)
-            {
-                string cleanedText = txt.text.Trim();
+            // foreach (TMP_Text txt in bingoCard.TxtBox)
+            // {
+            //     string cleanedText = txt.text.Trim();
 
-                if (string.IsNullOrEmpty(cleanedText))
-                {
-                    Debug.LogWarning("Skipping empty cell in BingoCard.");
-                    continue;
-                }
+            //     if (string.IsNullOrEmpty(cleanedText))
+            //     {
+            //         Debug.LogWarning("Skipping empty cell in BingoCard.");
+            //         continue;
+            //     }
 
-                int number;
-                if (int.TryParse(cleanedText, out number))
-                {
-                    availableNumbers.Add(number);
-                }
-                else
-                {
-                    Debug.LogWarning($"Invalid number in BingoCard: '{cleanedText}'");
-                }
-            }
+            //     int number;
+            //     if (int.TryParse(cleanedText, out number))
+            //     {
+            //         availableNumbers.Add(number);
+            //     }
+            //     else
+            //     {
+            //         Debug.LogWarning($"Invalid number in BingoCard: '{cleanedText}'");
+            //     }
+            // }
 
             if (availableNumbers.Count < count)
             {
@@ -112,11 +112,11 @@ namespace Andres_Scene_Scripts
 
         void DisplayRowNumbers(List<int> rowIndexes)
         {
-            for (int i = 0; i < rowIndexes.Count; i++)
-            {
-                Debug.Log("Row numbers " + bingoCard.TxtBox[rowIndexes[i]].text);
+            // for (int i = 0; i < rowIndexes.Count; i++)
+            // {
+            //     Debug.Log("Row numbers " + bingoCard.TxtBox[rowIndexes[i]].text);
 
-            }
+            // }
         }
 
         void OnClickTest(int selectedNumber)
@@ -138,24 +138,24 @@ namespace Andres_Scene_Scripts
 
         private void ResetHighlights()
         {
-            foreach (Button btn in bingoCard.BingoCardBtns)
-            {
-                btn.GetComponent<Image>().color = defaultColor;
-            }
+            // foreach (Button btn in bingoCard.BingoCardBtns)
+            // {
+            //     btn.GetComponent<Image>().color = defaultColor;
+            // }
         }
 
         private void ActivatePowerUp(int number)
         {
-            Debug.Log("Power-up activated on number: " + number);
-            // Example power-up: Clear entire row
-            foreach (TMP_Text txt in bingoCard.TxtBox)
-            {
-                if (txt.text == number.ToString())
-                {
-                    txt.color = powerUpColor; // Change color for effect
-                    txt.text = "X"; // Mark as used power-up
-                }
-            }
+            // Debug.Log("Power-up activated on number: " + number);
+            // // Example power-up: Clear entire row
+            // foreach (TMP_Text txt in bingoCard.TxtBox)
+            // {
+            //     if (txt.text == number.ToString())
+            //     {
+            //         txt.color = powerUpColor; // Change color for effect
+            //         txt.text = "X"; // Mark as used power-up
+            //     }
+            // }
         }
     }
 }
