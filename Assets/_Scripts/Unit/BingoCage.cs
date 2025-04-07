@@ -126,4 +126,72 @@ public class BingoCage : Singleton<BingoCage>
         if (number >= 61 && number <= 75) return "O";
         return "";
     }
+
+    public void ChooseNextNumber(int chosenNumber)
+    {
+        if (!availableNumbers.Contains(chosenNumber))
+    {
+        Debug.Log($"Number {chosenNumber} is either already drawn or invalid.");
+        return;
+    }
+
+    availableNumbers.Remove(chosenNumber);
+    calledNumbers.Add(chosenNumber);
+
+    displayNumber.text = GetBingoLetter(chosenNumber) + " " + chosenNumber;
+    Debug.Log($"Sacrifice Power-Up: {chosenNumber} has been chosen as the next number.");
+
+    OnBallDrawn?.Invoke(chosenNumber);
+
+    GameManager.Instance.UpdateGameState(GameState.Evaluate);
+    }
+
+    public void ReturnNumberToCage(int numberToReturn)
+    {
+            if (!availableNumbers.Contains(numberToReturn))
+    {
+        availableNumbers.Add(numberToReturn);
+        calledNumbers.Remove(numberToReturn);
+        Debug.Log($"ReturnNumberToCage: {numberToReturn} added back to available numbers.");
+    }
+    else
+    {
+        Debug.LogWarning($"ReturnNumberToCage: {numberToReturn} is already in the available pool.");
+    }
+    }
+
+    public void ChooseNextNumber()
+    {
+            // Disable other input actions temporarily
+    drawBallAction.Disable();
+    rollCageAction.Disable();
+
+    // You can prompt the player through the UI to select a number
+    Debug.Log("ChooseNextNumber: Player must choose a number to draw.");
+
+    // Example for development/testing: You simulate a chosen number
+    // Replace this with your actual UI logic to let the player pick
+    int chosenNumber = SimulatePlayerChoosingNumber();
+
+    if (availableNumbers.Contains(chosenNumber))
+    {
+        availableNumbers.Remove(chosenNumber);
+        calledNumbers.Add(chosenNumber);
+        displayNumber.text = GetBingoLetter(chosenNumber) + " " + chosenNumber;
+        OnBallDrawn?.Invoke(chosenNumber);
+
+        GameManager.Instance.UpdateGameState(GameState.Evaluate);
+    }
+    else
+    {
+        Debug.LogWarning($"ChooseNextNumber: Number {chosenNumber} is not available.");
+    }
+}
+
+// TEMP: This is just for testing — replace with real UI later
+private int SimulatePlayerChoosingNumber()
+{
+    // Just return a random number from the available ones for now
+    return availableNumbers[UnityEngine.Random.Range(0, availableNumbers.Count)];
+    }
 }
