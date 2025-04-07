@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class Cell : MonoBehaviour
 {
     private CellPowerUpManager powerUpManager;
+    public static event Action<Cell, bool> OnCellMarked;
     private TMP_Text btnText;
     private Button btn;
     public int number { get; private set; }
@@ -25,14 +26,16 @@ public class Cell : MonoBehaviour
     }
     public void MarkNumber()
     {
-        powerUpManager.TriggerPowers(this);
+        powerUpManager?.TriggerPowers(this);
         btn.interactable = false;
         isMarked = true;
+        OnCellMarked?.Invoke(this, isMarked);
     }
     public void UnmarkNumber()
     {
         btn.interactable = true;
         isMarked = false;
+        OnCellMarked?.Invoke(this, isMarked);
     }
 }
 

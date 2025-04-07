@@ -8,6 +8,27 @@ public class ScoreManager : Singleton<ScoreManager>
     public int playerPoints;
     public float currentMultiplier;
 
+    void OnEnable()
+    {
+        Cell.OnCellMarked += OnCellMarked;
+    }
+
+    void OnDisable()
+    {
+        Cell.OnCellMarked -= OnCellMarked;
+    }
+
+    private void OnCellMarked(Cell cell, bool isMarked)
+    {
+        if (isMarked)
+        {
+            IncreasePlayerPoints(50);
+        }
+        else
+        {
+            DecreasePlayerPoints(50);
+        }
+    }
     void Start()
     {
         playerPoints = 0;
@@ -15,14 +36,14 @@ public class ScoreManager : Singleton<ScoreManager>
         playerPointsUI.text = "Player Score: 0";
     }
 
-    public void IncreasePlayerPoints(int points)
+    private void IncreasePlayerPoints(int points)
     {
         float addPoints = points * currentMultiplier;
         playerPoints += (int)addPoints;
         playerPointsUI.text = "Player Score: " + playerPoints;
     }
 
-    public void DecreasePlayerPoints(int points)
+    private void DecreasePlayerPoints(int points)
     {
         playerPoints -= points;
         playerPointsUI.text = "Player Score: " + playerPoints;

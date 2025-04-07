@@ -10,6 +10,6 @@ public class DoublePointsPower : PowerUp
 {
     public override void ApplyPower(Cell cell)
     {
-        Debug.Log("Double points applied to: " + gameObject.name);
+        // 
     }
 }

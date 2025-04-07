@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 993036cce36bae14d8c2e4fe65b7407f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPointsUI: {fileID: 0}
+  playerPointsUI: {fileID: 9067247357052356971}
   playerPoints: 0
   currentMultiplier: 0
 --- !u!1 &223563734
