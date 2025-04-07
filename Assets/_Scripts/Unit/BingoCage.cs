@@ -10,11 +10,12 @@ public class BingoCage : Singleton<BingoCage>
     private TMP_Text displayNumber;
     [SerializeField] private float waitCageRoll = 1f;
     [SerializeField] private float drawInterval = 0.2f;
-
-    private List<Ball> availableBalls = new List<Ball>();
     private List<Ball> calledBalls = new List<Ball>();
+    private List<Ball> availableBalls = new List<Ball>();
     private PlayerInputActions inputActions;
     private bool isRolling = false;
+
+    Ball randomBall;
 
     public static event Action<int> OnBallDrawn;
 
@@ -23,6 +24,7 @@ public class BingoCage : Singleton<BingoCage>
         base.Awake();
         inputActions = new PlayerInputActions();
         displayNumber = GetComponentInChildren<TMP_Text>();
+
     }
 
     private void OnEnable()
@@ -65,20 +67,13 @@ public class BingoCage : Singleton<BingoCage>
 
     private void DrawBall()
     {
-        if (availableBalls.Count == 0)
-        {
-            displayNumber.text = "All balls called!";
-            return;
-        }
-
-        Ball drawnBall = availableBalls[UnityEngine.Random.Range(0, availableBalls.Count)];
+        Ball drawnBall = randomBall;
 
         availableBalls.Remove(drawnBall);
         calledBalls.Add(drawnBall);
 
         UpdateDisplay(drawnBall);
         OnBallDrawn?.Invoke(drawnBall.Number);
-        GameManager.Instance.UpdateGameState(GameState.Evaluate);
     }
 
     private void RollCage()
@@ -89,7 +84,7 @@ public class BingoCage : Singleton<BingoCage>
             return;
         }
 
-        if (!isRolling)
+        if (isRolling)
         {
             InvokeRepeating(nameof(PickRandomBall), 0, drawInterval);
         }
@@ -134,7 +129,7 @@ public class BingoCage : Singleton<BingoCage>
             return;
         }
 
-        Ball randomBall = availableBalls[UnityEngine.Random.Range(0, availableBalls.Count)];
+        randomBall = availableBalls[UnityEngine.Random.Range(0, availableBalls.Count)];
         UpdateDisplay(randomBall);
     }
 

@@ -28,5 +28,4 @@ public class ScoreManager : Singleton<ScoreManager>
         playerPointsUI.text = "Player Score: " + playerPoints;
     }
 
-
 }

@@ -1,8 +1,10 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 public class Cell : MonoBehaviour
 {
+    private CellPowerUpManager powerUpManager;
     private TMP_Text btnText;
     private Button btn;
     public int number { get; private set; }
@@ -12,6 +14,7 @@ public class Cell : MonoBehaviour
     {
         btn = GetComponent<Button>();
         btnText = GetComponentInChildren<TMP_Text>();
+        powerUpManager = GetComponent<CellPowerUpManager>();
     }
     public void Init(int number)
     {
@@ -22,13 +25,14 @@ public class Cell : MonoBehaviour
     }
     public void MarkNumber()
     {
+        powerUpManager.TriggerPowers(this);
         btn.interactable = false;
         isMarked = true;
     }
-
     public void UnmarkNumber()
     {
         btn.interactable = true;
         isMarked = false;
     }
 }
+

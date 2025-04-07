@@ -13,7 +13,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] int maxTurns = 15;
     public static event Action<GameState> OnStateChanged;
     private int currentTurn;
-    public IPowerUp tornado;
+
 
     protected override void Awake()
     {
@@ -22,9 +22,16 @@ public class GameManager : Singleton<GameManager>
     void Start()
     {
         UpdateGameState(GameState.GameInit);
-        tornado = new Tornado(0);
     }
+    private void OnEnable()
+    {
+        BingoCage.OnBallDrawn += ctx => UpdateGameState(GameState.Evaluate);
+    }
+    private void OnDisable()
+    {
+        BingoCage.OnBallDrawn -= ctx => UpdateGameState(GameState.Evaluate);
 
+    }
     public void UpdateGameState(GameState newState)
     {
         gameState = newState;

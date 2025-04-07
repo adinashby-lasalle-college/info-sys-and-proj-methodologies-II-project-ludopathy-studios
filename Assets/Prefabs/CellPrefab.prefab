@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 1207210532530426781}
   - component: {fileID: 1595554395997723737}
   - component: {fileID: 1687609147148821528}
+  - component: {fileID: 6770738086825162387}
   m_Layer: 5
-  m_Name: Button
+  m_Name: CellPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,6 +157,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c65b44c582a5ff34ba5aeaa9a08f4df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6770738086825162387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782689285766876039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39c769e4be133c44e963b2fbf0a413c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5005073726570047466

@@ -38,8 +38,6 @@ public class BingoCard : Singleton<BingoCard>
             // Mark the number
             foundCell.MarkNumber();
         }
-
-
     }
     void PlayerSetup()
     {

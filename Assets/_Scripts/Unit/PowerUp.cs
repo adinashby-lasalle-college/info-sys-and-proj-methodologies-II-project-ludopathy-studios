@@ -1,36 +1,15 @@
 using System.Collections.Generic;
-using Andres_Scene_Scripts;
 using UnityEngine;
 
-public interface IPowerUp
+public abstract class PowerUp : MonoBehaviour
 {
-    void Power();
+    public abstract void ApplyPower(Cell cell);
 }
 
-public class Tornado : MonoBehaviour, IPowerUp
+public class DoublePointsPower : PowerUp
 {
-    int index;
-
-    public Tornado(int _index)
+    public override void ApplyPower(Cell cell)
     {
-        index = _index;
-    }
-    public void Power()
-    {
-        //     //Get all the rows where the power up is placed 
-        //     List<int> rowIndexes = BingoSelectionHandler.Instance.GetRowIndexes(index);
-        //     //Toggle the buttons 
-        //     foreach (int index in rowIndexes)
-        //     {
-        //         if (BingoCard.Instance.MarkedSpace[index] == 0)
-        //         {
-        //             BingoCard.Instance.MarkNumber(BingoCard.Instance.PlayerNumbers[index]);
-        //         }
-        //         else
-        //         {
-        //             BingoCard.Instance.UnmarkNumber(BingoCard.Instance.PlayerNumbers[index]);
-        //             BingoCage.Instance.ReturnBall(BingoCard.Instance.PlayerNumbers[index]);
-        //         }
-        //     }
+        Debug.Log("Double points applied to: " + gameObject.name);
     }
 }
