@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class PowerUp : MonoBehaviour
@@ -10,6 +9,7 @@ public class DoublePointsPower : PowerUp
 {
     public override void ApplyPower(Cell cell)
     {
-        // 
+        cell.scorePoints *= 2;
     }
 }
+

@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class ScoreManager : Singleton<ScoreManager>
 {
@@ -18,15 +17,15 @@ public class ScoreManager : Singleton<ScoreManager>
         Cell.OnCellMarked -= OnCellMarked;
     }
 
-    private void OnCellMarked(Cell cell, bool isMarked)
+    private void OnCellMarked(Cell cell, bool isMarked, int scorePoints)
     {
         if (isMarked)
         {
-            IncreasePlayerPoints(50);
+            IncreasePlayerPoints(scorePoints);
         }
         else
         {
-            DecreasePlayerPoints(50);
+            DecreasePlayerPoints(scorePoints);
         }
     }
     void Start()
@@ -42,7 +41,6 @@ public class ScoreManager : Singleton<ScoreManager>
         playerPoints += (int)addPoints;
         playerPointsUI.text = "Player Score: " + playerPoints;
     }
-
     private void DecreasePlayerPoints(int points)
     {
         playerPoints -= points;
