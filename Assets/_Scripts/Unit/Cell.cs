@@ -31,6 +31,7 @@ public class Cell : MonoBehaviour
             if (newPower != null)
             {
                 powerUpManager.AddPower(newPower);
+                btn.GetComponent<Image>().color = Color.blue;
             }
             PowerSelectionUI.ClearSelection();
         }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.TextCore;
 
@@ -53,5 +54,43 @@ public class BingoCard : Singleton<BingoCard>
     {
         cell = Cells.Find(p => p.number == cellNumber);
         return cell != null;
+    }
+
+    public List<Cell> GetRowCells(Cell cell)
+    {
+        List<Cell> rowCells = new List<Cell>();
+
+        int cellIndex = Cells.IndexOf(cell);
+        if (cellIndex == -1)
+        {
+            Debug.LogWarning("Cell not found in the list.");
+            return rowCells;
+        }
+
+        int rowStart = (cellIndex / 5) * 5;
+
+        for (int i = rowStart; i < rowStart + 5; i++)
+        {
+            if (Cells[i] != cell)
+            {
+                rowCells.Add(Cells[i]);
+            }
+        }
+
+        return rowCells;
+    }
+    public void MarkList(List<Cell> rowCells)
+    {
+        foreach (Cell rowCell in rowCells)
+        {
+            if (rowCell.isMarked)
+            {
+                rowCell.UnmarkNumber();
+            }
+            else
+            {
+                rowCell.MarkNumber();
+            }
+        }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+// Component design pattern 
 public class CellPowerUpManager : MonoBehaviour
 {
     public List<PowerUp> activePowers = new List<PowerUp>();

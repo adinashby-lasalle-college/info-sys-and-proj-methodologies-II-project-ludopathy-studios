@@ -20,6 +20,8 @@ public static class PowerSelectionUI
 public enum PowerUpType
 {
     None,
-    DoublePoints
+    DoublePoints,
+
+    Tornado
 }
 
