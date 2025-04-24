@@ -1,11 +1,25 @@
+using Unity.Burst;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PowerSelectionUI : MonoBehaviour
+public static class PowerSelectionUI
 {
-    public static System.Type SelectedPowerType { get; private set; }
+    public static PowerUpType SelectedPower { get; private set; } = PowerUpType.None;
 
-    public void SelectDoublePoints()
+    public static void SelectPower(PowerUpType powerType)
     {
-        SelectedPowerType = typeof(DoublePointsPower);
+        SelectedPower = powerType;
+    }
+
+    public static void ClearSelection()
+    {
+        SelectedPower = PowerUpType.None;
     }
 }
+
+public enum PowerUpType
+{
+    None,
+    DoublePoints
+}
+

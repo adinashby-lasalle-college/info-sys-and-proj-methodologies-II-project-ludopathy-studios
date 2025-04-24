@@ -9,7 +9,7 @@ public class DoublePointsPower : PowerUp
 {
     public override void ApplyPower(Cell cell)
     {
-        cell.scorePoints *= 2;
+        cell.pointsToScore *= 2;
     }
 }
 

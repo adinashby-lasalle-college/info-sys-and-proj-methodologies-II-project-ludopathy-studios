@@ -1,15 +1,21 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CellPowerUpManager : MonoBehaviour
 {
-    private List<PowerUp> activePowers = new List<PowerUp>();
+    public List<PowerUp> activePowers = new List<PowerUp>();
 
-    public void AddPower<T>() where T : PowerUp
+    public void AddPower(PowerUp newPower)
     {
-        if (GetComponent<T>() == null)
+        if (activePowers.Any(item => item.GetType() == newPower.GetType()))
         {
-            PowerUp newPower = gameObject.AddComponent<T>();
+            Destroy(newPower);
+            Debug.Log("Power already on cell");
+        }
+        else
+        {
             activePowers.Add(newPower);
         }
     }
