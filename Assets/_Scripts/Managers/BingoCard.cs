@@ -79,17 +79,39 @@ public class BingoCard : Singleton<BingoCard>
 
         return rowCells;
     }
-    public void MarkList(List<Cell> rowCells)
+
+    public List<Cell> GetColumnCells(Cell cell)
     {
-        foreach (Cell rowCell in rowCells)
+        List<Cell> colCells = new List<Cell>();
+
+        int cellIndex = Cells.IndexOf(cell);
+        if (cellIndex == -1)
         {
-            if (rowCell.isMarked)
+            Debug.LogWarning("Cell not found in the list.");
+            return colCells;
+        }
+        int colStart = cellIndex % 5;
+
+        for (int i = colStart; i < colStart + 20; i += 5)
+        {
+            if (Cells[i] != cell)
             {
-                rowCell.UnmarkNumber();
+                colCells.Add(Cells[i]);
+            }
+        }
+        return colCells;
+    }
+    public void MarkList(List<Cell> cellList)
+    {
+        foreach (Cell cell in cellList)
+        {
+            if (cell.isMarked)
+            {
+                cell.UnmarkNumber();
             }
             else
             {
-                rowCell.MarkNumber();
+                cell.MarkNumber();
             }
         }
     }

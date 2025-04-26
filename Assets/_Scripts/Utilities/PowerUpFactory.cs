@@ -11,9 +11,21 @@ public class PowerUpFactory
                 return cellObject.AddComponent<DoublePointsPower>();
             case PowerUpType.Tornado:
                 return cellObject.AddComponent<Tornado>();
+            case PowerUpType.Bomberman:
+                return cellObject.AddComponent<Bomberman>();
             default:
                 Debug.LogWarning("Invalid or None PowerUp selected");
                 return null;
         }
     }
+}
+
+public enum PowerUpType
+{
+    None,
+    DoublePoints,
+
+    Tornado,
+
+    Bomberman
 }

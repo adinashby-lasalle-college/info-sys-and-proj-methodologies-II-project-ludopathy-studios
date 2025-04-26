@@ -1,11 +1,11 @@
 using System;
 using System.Collections;
-using Andres_Scene_Scripts;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
+// State pattern
 public class GameManager : Singleton<GameManager>
 {
     public GameState gameState;

@@ -23,7 +23,7 @@ public class CellPowerUpManager : MonoBehaviour
 
     public void TriggerPowers(Cell cell)
     {
-        foreach (var power in new List<PowerUp>(activePowers))
+        foreach (PowerUp power in activePowers)
         {
             power.ApplyPower(cell);
             activePowers.Remove(power);
