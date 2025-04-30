@@ -1,39 +1,47 @@
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using UnityEngine;
 using System.Collections;
-using System.Runtime.CompilerServices;
+
 
 public abstract class PowerUp : MonoBehaviour
 {
-    public abstract IEnumerator ApplyPower(Cell cell);
+    public abstract IEnumerator ApplyPowerCoroutine(Cell cell);
+    public void ApplyPower()
+    {
+        StartCoroutine(ApplyPowerCoroutine(GetComponent<Cell>()));
+    }
 }
 
 public class DoublePointsPower : PowerUp
 {
-    public override IEnumerator ApplyPower(Cell cell)
+    public override IEnumerator ApplyPowerCoroutine(Cell cell)
     {
         cell.pointsToScore *= 2;
 
         yield return null;
+
+        Destroy(this);
     }
 }
 
 public class Tornado : PowerUp
 {
-    public override IEnumerator ApplyPower(Cell cell)
+    public override IEnumerator ApplyPowerCoroutine(Cell cell)
     {
         List<Cell> rowCells = BingoCard.Instance.GetRowCells(cell);
 
         BingoCard.Instance.MarkList(rowCells);
 
-        yield return null;
+        yield return new WaitForSeconds(1f);
+
+        Destroy(this);
+
     }
 }
 
 public class Bomberman : PowerUp
 {
-    public override IEnumerator ApplyPower(Cell cell)
+    public override IEnumerator ApplyPowerCoroutine(Cell cell)
     {
         List<Cell> rowCells = BingoCard.Instance.GetRowCells(cell);
 
@@ -43,7 +51,9 @@ public class Bomberman : PowerUp
 
         BingoCard.Instance.MarkList(colCells);
 
-        yield return null;
+        yield return new WaitForSeconds(1f);
+
+        Destroy(this);
 
     }
 }
